@@ -10,7 +10,7 @@
 
         function submit() {
             var content = $('input').value;
-            socket.emit('chat', content)
+            socket.emit('msg', content)
         }
 
         function onReceive(data) {
@@ -20,7 +20,7 @@
 
         function connect() {
             socket = io.connect('http://192.168.2.20');
-            socket.on('chat', onReceive);
+            socket.on('msg', onReceive);
 
             var name = 'user' + (parseInt(Math.random()*10) * parseInt(Math.random()*10))
             name = prompt('What\'s your name brah?', name);
