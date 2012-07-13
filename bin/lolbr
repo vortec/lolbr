@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+
+var lolbr = require('lolbr');
+lolbr.start();

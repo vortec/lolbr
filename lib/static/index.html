@@ -1,0 +1,47 @@
+<html>
+<head>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = false;
+
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        function submit() {
+            var content = $('input').value;
+            socket.emit('chat', content)
+        }
+
+        function onReceive(data) {
+            var log = $('log');
+            log.innerHTML = log.innerHTML + "<br/>" + data;
+        }
+
+        function connect() {
+            socket = io.connect('http://192.168.2.20');
+            socket.on('chat', onReceive);
+
+            var name = 'user' + (parseInt(Math.random()*10) * parseInt(Math.random()*10))
+            name = prompt('What\'s your name brah?', name);
+            $('nickname').innerHTML = name;
+            socket.emit('nickname', name);
+        }
+
+
+    </script>
+</head>
+<body onload="connect()">
+
+    <h1>Hello, <span id="nickname"></span>!</h1>
+
+    <input id="input" type="text" />
+    <input id="submit" type="submit" onclick="submit()" />
+
+    <div id="log">
+    </div>
+
+
+
+</body>
+</html>

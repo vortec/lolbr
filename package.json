@@ -1,0 +1,18 @@
+{
+    "name": "lolbr",
+    "description": "Simple chat based on Socket.IO",
+    "version": "0.1.0",
+    "author": {
+        "name": "Fabian Kochem",
+        "email": "fkochem@gmail.com"
+    },
+    "contributors": [],
+    "dependencies": {
+        "express": "3.0.0beta6",
+        "socket.io": "0.9.6"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vortec/lolbr.git"
+    }
+}
