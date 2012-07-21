@@ -8,24 +8,35 @@
             return document.getElementById(id);
         }
 
-        function submit() {
-            var content = $('input').value;
-            socket.emit('msg', content)
+        var handlers = {
+            'CONNECT': function(data) {
+                $('log').innerHTML = $('log').innerHTML + data['nickname'] + ' hat den Raum betreten.<br/>';
+            },
+
+            'MESSAGE': function(data) {
+                $('log').innerHTML = $('log').innerHTML + data['nickname'] + ' sagt: ' + data['text'] + '<br/>';
+            }
         }
 
-        function onReceive(data) {
-            var log = $('log');
-            log.innerHTML = log.innerHTML + "<br/>" + data;
+        function submit() {
+            var text = $('input').value;
+            socket.emit('MESSAGE', {'text': text});
         }
 
         function connect() {
-            socket = io.connect('http://192.168.2.20');
-            socket.on('msg', onReceive);
+            var host = window.location.hostname;
+            socket = io.connect('http://' + host);
 
-            var name = 'user' + (parseInt(Math.random()*10) * parseInt(Math.random()*10))
-            name = prompt('What\'s your name brah?', name);
-            $('nickname').innerHTML = name;
-            socket.emit('nickname', name);
+            for (var event in handlers) {
+                socket.on(event, handlers[event]);
+            }
+
+            var room = 'foobar';
+            var nickname = 'user' + (parseInt(Math.random()*10) * parseInt(Math.random()*10))
+            nickname = prompt('What\'s your name brah?', name);
+            $('nickname').innerHTML = nickname;
+            
+            socket.emit('CONNECT', {'room': room, 'nickname': nickname});
         }
 
 
