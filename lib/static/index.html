@@ -1,21 +1,12 @@
 <html>
 <head>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="/client_handlers.js"></script>
     <script>
         var socket = false;
 
         function $(id) {
             return document.getElementById(id);
-        }
-
-        var handlers = {
-            'CONNECT': function(data) {
-                $('log').innerHTML = $('log').innerHTML + data['nickname'] + ' hat den Raum betreten.<br/>';
-            },
-
-            'MESSAGE': function(data) {
-                $('log').innerHTML = $('log').innerHTML + data['nickname'] + ' sagt: ' + data['text'] + '<br/>';
-            }
         }
 
         function submit() {
@@ -33,7 +24,7 @@
 
             var room = 'foobar';
             var nickname = 'user' + (parseInt(Math.random()*10) * parseInt(Math.random()*10))
-            nickname = prompt('What\'s your name brah?', name);
+            nickname = prompt('What\'s your name?', name);
             $('nickname').innerHTML = nickname;
             
             socket.emit('CONNECT', {'room': room, 'nickname': nickname});
