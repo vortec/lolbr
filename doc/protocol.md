@@ -44,3 +44,9 @@ MESSAGE
 Parameters:
  - ``nickname`` (str)
  - ``text`` (str)
+
+
+ DISCONNECT
+ ----------
+ Parameters:
+  - ``nickname``(str)
