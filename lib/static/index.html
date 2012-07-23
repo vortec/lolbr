@@ -1,17 +1,22 @@
 <html>
 <head>
+    <script src="./js/jquery-1.4.2.min.js"></script>
+    <script src="./js/client_handlers.js"></script>
+
+    <script src="./js/ui.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="/client_handlers.js"></script>
     <script>
         var socket = false;
 
-        function $(id) {
-            return document.getElementById(id);
+        function addToLog(text) {
+            $('#log').append(text + '<br/>');
+            scrollToChatBottom();
         }
 
         function submit() {
-            var text = $('input').value;
+            var text = $('#input').val();
             socket.emit('MESSAGE', {'text': text});
+            clearInputField();
         }
 
         function connect() {
@@ -25,24 +30,26 @@
             var room = 'foobar';
             var nickname = 'user' + (parseInt(Math.random()*10) * parseInt(Math.random()*10))
             nickname = prompt('What\'s your name?', name);
-            $('nickname').innerHTML = nickname;
+            clearInputField();
             
             socket.emit('CONNECT', {'room': room, 'nickname': nickname});
         }
 
-
+        $(window).ready(function() {
+            adjustComponentDimensions();
+            assignListeners();
+            connect();
+        });
     </script>
 </head>
-<body onload="connect()">
+<body>
 
-    <h1>Hello, <span id="nickname"></span>!</h1>
-
-    <input id="input" type="text" />
-    <input id="submit" type="submit" onclick="submit()" />
-
-    <div id="log">
+    <div id="log" style="overflow: auto">
     </div>
 
+    <div id="user_input">
+        <input id="input" type="text" />
+    </div>
 
 
 </body>
