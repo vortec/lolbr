@@ -7,13 +7,21 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/jquery-1.4.2.min.js"></script>
     <script src="/js/client_handlers.js"></script>
-    <script src="/js/helpers.js"></script>
     <script src="/js/ui.js"></script>
     <script>
         var socket = false;
         var room = window.location.pathname.split('/')[1];
         var nickname = 'user' + (parseInt(Math.random()*10) * parseInt(Math.random()*10))
         nickname = prompt('What\'s your name?', name);
+
+        function encode_utf8(text) {
+            return unescape(encodeURIComponent(text));
+        }
+
+        function decode_utf8(text) {
+            return decodeURIComponent(escape(text));
+        }
+
 
         function addToLog(text) {
             $('#log').append(text + '<br/>');
