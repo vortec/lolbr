@@ -1,0 +1,4 @@
+#!/usr/bin/env supervisor --watch ..
+
+var lolbr = require('lolbr');
+lolbr.start();
