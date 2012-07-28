@@ -4,7 +4,7 @@ Initialize connection
 =====================
 
 1) Client opens http(s)://lolbr/<chatroom>, a Socket.IO connection gets established
-2) Client sends ``CONNECT`` command with room- and nickname.
+2) Client sends ``JOIN`` command with room- and nickname.
 3) Server responds 
 
 
