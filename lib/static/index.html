@@ -4,11 +4,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-    <script src="./js/jquery-1.4.2.min.js"></script>
-    <script src="./js/client_handlers.js"></script>
-
-    <script src="./js/ui.js"></script>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/jquery-1.4.2.min.js"></script>
+    <script src="/js/client_handlers.js"></script>
+    <script src="/js/ui.js"></script>
     <script>
         var socket = false;
         var nickname;
@@ -32,7 +31,7 @@
                 socket.on(event, handlers[event]);
             }
 
-            var room = 'foobar';
+            var room = window.location.pathname.split('/')[1];
             nickname = 'user' + (parseInt(Math.random()*10) * parseInt(Math.random()*10))
             nickname = prompt('What\'s your name?', name);
             clearInputField();
