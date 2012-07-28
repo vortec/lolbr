@@ -11,6 +11,7 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var socket = false;
+        var nickname;
 
         function addToLog(text) {
             $('#log').append(text + '<br/>');
@@ -32,7 +33,7 @@
             }
 
             var room = 'foobar';
-            var nickname = 'user' + (parseInt(Math.random()*10) * parseInt(Math.random()*10))
+            nickname = 'user' + (parseInt(Math.random()*10) * parseInt(Math.random()*10))
             nickname = prompt('What\'s your name?', name);
             clearInputField();
             
