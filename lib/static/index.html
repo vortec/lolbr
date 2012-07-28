@@ -10,7 +10,9 @@
     <script src="/js/ui.js"></script>
     <script>
         var socket = false;
-        var nickname;
+        var room = window.location.pathname.split('/')[1];
+        var nickname = 'user' + (parseInt(Math.random()*10) * parseInt(Math.random()*10))
+        nickname = prompt('What\'s your name?', name);
 
         function addToLog(text) {
             $('#log').append(text + '<br/>');
@@ -26,17 +28,9 @@
         function connect() {
             var host = window.location.hostname;
             socket = io.connect('http://' + host);
-
             for (var event in handlers) {
                 socket.on(event, handlers[event]);
             }
-
-            var room = window.location.pathname.split('/')[1];
-            nickname = 'user' + (parseInt(Math.random()*10) * parseInt(Math.random()*10))
-            nickname = prompt('What\'s your name?', name);
-            clearInputField();
-            
-            socket.emit('CONNECT', {'room': room, 'nickname': nickname});
         }
 
         $(window).ready(function() {

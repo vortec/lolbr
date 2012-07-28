@@ -11,14 +11,14 @@ Initialize connection
 Commands
 ========
 
-CONNECT
+JOIN
 -------
 Arguments:
  - ``chatroom`` (str)
  - ``nickname`` (str)
 
 Returns:
-"CONNECT" (event)
+"JOIN" (event)
 
 
 MESSAGE
@@ -33,7 +33,7 @@ Returns:
 Events
 ======
 
-CONNECT
+JOIN
 -------
 Parameters:
  - ``nickname`` (str)
@@ -46,7 +46,7 @@ Parameters:
  - ``text`` (str)
 
 
- DISCONNECT
+ LEAVE
  ----------
  Parameters:
   - ``nickname``(str)
