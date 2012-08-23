@@ -11,8 +11,6 @@
     <script>
         var socket = false;
         var room = window.location.pathname.split('/')[1];
-        var nickname = 'user' + (parseInt(Math.random()*10) * parseInt(Math.random()*10))
-        nickname = prompt('What\'s your name?', name);
 
         function encode_utf8(text) {
             return unescape(encodeURIComponent(text));
