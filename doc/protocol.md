@@ -52,6 +52,10 @@ JOIN
 Parameters:
  - ``nickname`` (str)
 
+LEAVE
+-----
+Parameters:
+ - ``nickname`` (str)
 
 MESSAGE
 -------
