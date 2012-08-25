@@ -4,18 +4,27 @@ Initialize connection
 =====================
 
 1) Client opens http(s)://lolbr/<chatroom>, a Socket.IO connection gets established
-2) Client sends ``JOIN`` command with room- and nickname.
-3) Server responds 
+2.a) If no session is available, server sends ``REQUIRE_AUTH`` event, user sends ``AUTH`` command
+2.b) If session is available, server sends ``AUTH`` event
+3) Client sends ``JOIN`` command with roomname
 
 
 Commands
 ========
 
+AUTH
+----
+Arguments:
+ - ``nickname`` (str)
+
+Returns:
+"AUTH" (event)
+
+
 JOIN
--------
+----
 Arguments:
  - ``chatroom`` (str)
- - ``nickname`` (str)
 
 Returns:
 "JOIN" (event)
@@ -33,8 +42,13 @@ Returns:
 Events
 ======
 
+AUTH
+----
+User was authenticated successfully.
+
+
 JOIN
--------
+----
 Parameters:
  - ``nickname`` (str)
 
@@ -46,7 +60,6 @@ Parameters:
  - ``text`` (str)
 
 
- LEAVE
- ----------
- Parameters:
-  - ``nickname``(str)
+REQUIRE_AUTH
+------------
+Server awaits ``AUTH`` command.
