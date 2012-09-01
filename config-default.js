@@ -15,10 +15,17 @@ module.exports = (function(){
 
             // MySQL
             /*
-            var store = require('connect-mysql-session')(connect);
+            var mysql = require('mysql').createClient({
+                user: 'dbuser',
+                password: 'dbpass',
+                database: 'db'
+            });
+            var MySQLStore = require('connect-mysql')(express);
+            var store = require('connect-mysql')(connect);
             var settings = {
-                store: new store('lolbr', 'lol-user', 'lol-pass')
+                store: new store({client: mysql})
             };
+            return settings;
             */
     }
 })();
