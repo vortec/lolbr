@@ -12,14 +12,9 @@ Initialize connection
 Commands
 ========
 
-AUTH
-----
-Arguments:
- - ``nickname`` (str)
-
-Returns:
-"AUTH" (event)
-
+HAI
+---
+Must be sent after ``CONNECT_OK`` event.
 
 JOIN
 ----
@@ -38,14 +33,25 @@ Arguments:
 Returns:
 ``MESSAGE`` (event)
 
+NICKNAME
+--------
+Provides nickname for current session.
+
+Arguments:
+ - ``nickname`` (str)
+
+Returns:
+  - ``WELCOME`` (event)
+  - ``REQUIRE_NICKNAME`` (event)
+
 
 Events
 ======
 
-AUTH
-----
-User was authenticated successfully.
-
+CONNECT_OK
+----------
+Connect was OK, event handlers were assigned, ready to auth / set nickname.
+Server awaits ``HAI`` command to start authentication.
 
 JOIN
 ----
@@ -63,7 +69,19 @@ Parameters:
  - ``nickname`` (str)
  - ``text`` (str)
 
+MISSING_PARAMETER
+-----------------
+ - ``parameter`` (str)
 
-REQUIRE_AUTH
-------------
-Server awaits ``AUTH`` command.
+REQUIRE_NICKNAME
+----------------
+Server awaits ``NICKNAME`` command.
+Parameters:
+ - ``reason`` (str: UNKNOWN|NOT_SANE)
+
+WELCOME
+-------
+Authentication successful.
+
+Parameters:
+ - ``nickname`` (str)
