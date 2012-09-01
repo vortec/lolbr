@@ -1,5 +1,6 @@
 // Please modify values and rename to config.js
 
+var express = require('express');
 var connect = require('connect');
 var MemoryStore = connect.middleware.session.MemoryStore;
 
@@ -9,6 +10,7 @@ module.exports = (function(){
         case 'production':
         default:
             var settings = {
+                mysql: false,
                 store: new MemoryStore()
             };
             return settings;
@@ -23,6 +25,7 @@ module.exports = (function(){
             var MySQLStore = require('connect-mysql')(express);
             var store = require('connect-mysql')(connect);
             var settings = {
+                mysql: mysql,
                 store: new store({client: mysql})
             };
             return settings;
