@@ -44,6 +44,21 @@ Returns:
   - ``WELCOME`` (event)
   - ``REQUIRE_NICKNAME`` (event)
 
+ROOM_LIST
+---------
+Arguments:
+ - ``nickname`` (str)
+
+Returns:
+ - ``ROOM_LIST``(event)
+
+USER_LIST
+---------
+Arguments:
+ - ``roomname`` (str)
+
+Returns:
+ - ``USER_LIST``(event)
 
 Events
 ======
@@ -78,6 +93,17 @@ REQUIRE_NICKNAME
 Server awaits ``NICKNAME`` command.
 Parameters:
  - ``reason`` (str: UNKNOWN|NOT_SANE)
+
+ROOM_LIST
+---------
+Parameters:
+ - ``nickname`` (str)
+ - ``roomnames`` (array)
+
+USER_LIST
+---------
+Parameters:
+ - ``nicknames`` (array)
 
 WELCOME
 -------
