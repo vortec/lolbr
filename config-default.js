@@ -10,23 +10,23 @@ module.exports = (function(){
         case 'production':
         default:
             var settings = {
-                mysql: false,
+                connection: false,  // no persistance
                 store: new MemoryStore()
             };
             return settings;
 
             // MySQL
             /*
-            var mysql = require('mysql').createClient({
+            var connection = require('mysql').createClient({
                 user: 'dbuser',
                 password: 'dbpass',
                 database: 'db'
             });
-            var MySQLStore = require('connect-mysql')(express);
             var store = require('connect-mysql')(connect);
             var settings = {
-                mysql: mysql,
-                store: new store({client: mysql})
+                connection: connection,
+                store: new store({client: connection}),
+                protocol: 'mysql'
             };
             return settings;
             */
