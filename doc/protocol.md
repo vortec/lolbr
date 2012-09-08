@@ -92,7 +92,7 @@ REQUIRE_NICKNAME
 ----------------
 Server awaits ``NICKNAME`` command.
 Parameters:
- - ``reason`` (str: UNKNOWN|NOT_SANE)
+ - ``reason`` (str: UNKNOWN|NOT_SANE|TAKEN)
 
 ROOM_LIST
 ---------
