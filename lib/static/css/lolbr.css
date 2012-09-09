@@ -1,0 +1,21 @@
+body {
+	background-color: #fcfce3;
+	font-family: Helvetica;
+	font-size: 16px;
+}
+
+#title_bar {
+	background-color: #6f807c;
+	font-size: 18px;
+	color: #fcfce3;
+	padding: 2px;
+	margin-bottom: 4px;
+}
+
+#title_bar_roomname {
+	font-weight: bold;
+}
+
+#log {
+	padding: 2px;
+}

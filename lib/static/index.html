@@ -4,6 +4,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
+    <link rel="stylesheet" type="text/css" href="/css/lolbr.css" />
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/jquery-1.4.2.min.js"></script>
     <script src="/js/client_handlers.js"></script>
@@ -49,6 +51,10 @@
     </script>
 </head>
 <body>
+
+    <div id="title_bar">
+        <span id="title_bar_roomname"></span> <span id="title_bar_topic"></span>
+    </div>
 
     <div id="log" style="overflow: auto">
     </div>
