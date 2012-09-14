@@ -10,6 +10,7 @@ module.exports = (function(){
         case 'production':
         default:
             var settings = {
+                port: 8000,
                 connection: false,  // no persistance
                 store: new MemoryStore()
             };

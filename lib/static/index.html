@@ -8,25 +8,29 @@
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/jquery-1.4.2.min.js"></script>
+
     <script src="/js/client_handlers.js"></script>
-    <script src="/js/ui.js"></script>
+    <script src="/js/models/room.js"></script>
+    <script src="/js/models/user.js"></script>
+    <script src="/js/views/log.js"></script>
+    <script src="/js/views/ui.js"></script>
+    <script src="/js/views/userlist.js"></script>
+    <script src="/js/views/text.js"></script>
+
     <script>
-        var socket = false;
-        var roomname = window.location.pathname.split('/')[1];
+        var log, room, socket, user, userlist;
+        $(window).ready(function() {
+            log = new Log($('#log'));
+            userlist = new Userlist($('#user_list_elem'));
 
-        function encode_utf8(text) {
-            return unescape(encodeURIComponent(text));
-        }
+            var roomname = window.location.pathname.split('/')[1];
+            room = new Room(roomname);
 
-        function decode_utf8(text) {
-            return decodeURIComponent(escape(text));
-        }
+            assignListeners();
+            connect();
+        });
+        log = new Log();
 
-
-        function addToLog(text) {
-            $('#log').append(text + '<br/>');
-            scrollToChatBottom();
-        }
 
         function updateUserlist(nicknames) {
             for (var i in nicknames) {
@@ -40,8 +44,7 @@
 
         function submit() {
             var text = $('#input').val();
-            text = encode_utf8(text);
-            socket.emit('MESSAGE', {'text': text});
+            user.push('MESSAGE', {'text': text});
             clearInputField();
         }
 
@@ -52,12 +55,6 @@
                 socket.on(event, handlers[event]);
             }
         }
-
-        $(window).ready(function() {
-            adjustComponentDimensions();
-            assignListeners();
-            connect();
-        });
     </script>
 </head>
 <body>
