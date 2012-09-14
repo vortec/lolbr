@@ -41,6 +41,7 @@ body {
 #log {
 	position: absolute;
 	top: 20px;
+	bottom: 50px;
 	background-color: yellow;
 	width: 80%;
 	overflow: auto;
@@ -49,6 +50,7 @@ body {
 #user_list {
 	position: absolute;
 	top: 20px;
+	bottom: 50px;
 	background-color: green;
 	width: 20%;
 	right: 0;
