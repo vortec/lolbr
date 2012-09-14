@@ -28,6 +28,16 @@
             scrollToChatBottom();
         }
 
+        function updateUserlist(nicknames) {
+            for (var i in nicknames) {
+                var nickname = nicknames[i];
+                var nickname_elem = document.createElement('li');
+                nickname_elem.setAttribute('id', 'user_'+nickname);
+                nickname_elem.innerHTML = nickname;
+                document.getElementById('user_list_elem').appendChild(nickname_elem);
+            }
+        }
+
         function submit() {
             var text = $('#input').val();
             text = encode_utf8(text);
@@ -52,15 +62,21 @@
 </head>
 <body>
 
-    <div id="title_bar">
-        <span id="title_bar_roomname"></span> <span id="title_bar_topic"></span>
+    <div id="top_bar">
+        <span id="top_bar_roomname"></span> <span id="top_bar_topic"></span>
     </div>
 
-    <div id="log" style="overflow: auto">
-    </div>
+    <div id="log"></div>
+    <div id="user_list">
+        <ul id="user_list_elem">
 
-    <div id="user_input">
-        <input id="input" type="text" />
+        </ul>
+    </div>
+    
+    <!--div id="content"></div-->
+
+    <div id="bottom_bar">
+        <span id="username"></span><input id="input" type="text" />
     </div>
 
 

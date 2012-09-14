@@ -1,21 +1,71 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
 body {
-	background-color: #fcfce3;
+	background-color: #dbd5d1;
 	font-family: Helvetica;
 	font-size: 16px;
 }
 
-#title_bar {
-	background-color: #6f807c;
+
+#top_bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 20px;
+	width: 100%;
+	background-color: #6a231f;
 	font-size: 18px;
 	color: #fcfce3;
-	padding: 2px;
-	margin-bottom: 4px;
 }
 
-#title_bar_roomname {
+#top_bar_roomname {
 	font-weight: bold;
 }
 
+
+/*#content {
+	position: absolute;
+	padding-left: 4px;
+	padding-right: 4px;
+	width: 100%;
+	top: 20px;
+	background-color:red;
+}*/
+
 #log {
-	padding: 2px;
+	position: absolute;
+	top: 20px;
+	background-color: yellow;
+	width: 80%;
+	overflow: auto;
 }
+
+#user_list {
+	position: absolute;
+	top: 20px;
+	background-color: green;
+	width: 20%;
+	right: 0;
+}
+
+#bottom_bar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	background-color: #8c7b65;
+}
+
+#input {
+	background-color: #d9d4ba;
+	font-size: 16px;
+	border: 0;
+}
+*/
