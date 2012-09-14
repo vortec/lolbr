@@ -25,6 +25,7 @@ module.exports = (function(){
             });
             var store = require('connect-mysql')(connect);
             var settings = {
+                port: 8000,
                 connection: connection,
                 store: new store({client: connection}),
                 protocol: 'mysql'
