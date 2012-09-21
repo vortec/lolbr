@@ -29,6 +29,11 @@
             assignListeners();
             connect();
         });
+
+        $(window).resize(function() {
+            log.scrollDown();
+        });
+
         log = new Log();
 
 
