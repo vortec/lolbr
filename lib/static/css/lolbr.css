@@ -7,7 +7,7 @@ html, body {
 }
 
 body {
-	background-color: #dbd5d1;
+	background-color: #ffffeb;
 	font-family: Helvetica;
 	font-size: 16px;
 }
@@ -17,11 +17,14 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: 20px;
+	height: 24px;
 	width: 100%;
-	background-color: #6a231f;
+	background-color: #7f7f4f;
 	font-size: 18px;
-	color: #fcfce3;
+	color: #ffffeb;
+	vertical-align: middle;
+
+	padding-left: 2px;
 }
 
 #top_bar_roomname {
@@ -31,12 +34,14 @@ body {
 
 #log {
 	position: absolute;
-	top: 20px;
+	top: 24px;
 	bottom: 24px;
 
-	background-color: yellow;
 	width: 80%;
 	overflow: auto;
+
+	padding-top: 2px;
+	padding-left: 2px;
 }
 
 #user_list {
@@ -44,7 +49,8 @@ body {
 	top: 20px;
 	bottom: 24px;
 
-	background-color: green;
+	background-color: #7f7f4f;
+	color: #ccccbc;
 	width: 20%;
 	right: 0;
 }
@@ -54,11 +60,10 @@ body {
 	bottom: 0;
 	height: 24px;
 
-	background-color: #d9d4ba;
-	font-size: 16px;
+	background-color: #ccccbc;
+	font-size: 14px;
 	width: 80%;
 	left: 0;
-	border: 1px solid;
 }
 
 #input_buttons {
@@ -68,5 +73,5 @@ body {
 	width: 20%;
 	right: 0;
 
-	background-color: blue;
+	background-color: #7f7f4f;
 }
