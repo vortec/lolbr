@@ -29,19 +29,11 @@ body {
 }
 
 
-/*#content {
-	position: absolute;
-	padding-left: 4px;
-	padding-right: 4px;
-	width: 100%;
-	top: 20px;
-	background-color:red;
-}*/
-
 #log {
 	position: absolute;
 	top: 20px;
-	bottom: 50px;
+	bottom: 24px;
+
 	background-color: yellow;
 	width: 80%;
 	overflow: auto;
@@ -50,23 +42,31 @@ body {
 #user_list {
 	position: absolute;
 	top: 20px;
-	bottom: 50px;
+	bottom: 24px;
+
 	background-color: green;
 	width: 20%;
 	right: 0;
 }
 
-#bottom_bar {
+#input_text {
 	position: absolute;
 	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 50px;
-	background-color: #8c7b65;
-}
+	height: 24px;
 
-#input {
 	background-color: #d9d4ba;
 	font-size: 16px;
-	border: 0;
+	width: 80%;
+	left: 0;
+	border: 1px solid;
+}
+
+#input_buttons {
+	position: absolute;
+	bottom: 0;
+	height: 24px;
+	width: 20%;
+	right: 0;
+
+	background-color: blue;
 }
