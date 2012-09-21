@@ -16,51 +16,8 @@
     <script src="/js/views/ui.js"></script>
     <script src="/js/views/userlist.js"></script>
     <script src="/js/views/text.js"></script>
+    <script src="/js/lolbr.js"></script>
 
-    <script>
-        var log, room, socket, user, userlist;
-        $(window).ready(function() {
-            log = new Log($('#log'));
-            userlist = new Userlist($('#user_list_elem'));
-
-            var roomname = window.location.pathname.split('/')[1];
-            room = new Room(roomname);
-
-            assignListeners();
-            connect();
-        });
-
-        $(window).resize(function() {
-            log.scrollDown();
-        });
-
-        log = new Log();
-
-
-        function updateUserlist(nicknames) {
-            for (var i in nicknames) {
-                var nickname = nicknames[i];
-                var nickname_elem = document.createElement('li');
-                nickname_elem.setAttribute('id', 'user_'+nickname);
-                nickname_elem.innerHTML = nickname;
-                document.getElementById('user_list_elem').appendChild(nickname_elem);
-            }
-        }
-
-        function submit() {
-            var text = $('#input').val();
-            user.push('MESSAGE', {'text': text});
-            clearInputField();
-        }
-
-        function connect() {
-            var host = window.location.hostname;
-            socket = io.connect('http://' + host);
-            for (var event in handlers) {
-                socket.on(event, handlers[event]);
-            }
-        }
-    </script>
 </head>
 <body>
 
@@ -68,7 +25,7 @@
         <span id="top_bar_roomname"></span> <span id="top_bar_topic"></span>
     </div>
 
-    <div id="log"></div>
+    <div id="log" ondragenter="return false;" ondragover="return false;" ondrop="dropFile(event);"></div>
     <div id="user_list">
         <ul id="user_list_elem">
 
