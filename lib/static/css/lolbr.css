@@ -55,7 +55,7 @@ body {
 	right: 0;
 }
 
-#input_text {
+#input {
 	position: absolute;
 	bottom: 0;
 	height: 24px;
@@ -64,14 +64,4 @@ body {
 	font-size: 14px;
 	width: 80%;
 	left: 0;
-}
-
-#input_buttons {
-	position: absolute;
-	bottom: 0;
-	height: 24px;
-	width: 20%;
-	right: 0;
-
-	background-color: #7f7f4f;
 }

@@ -48,7 +48,7 @@
         }
 
         function submit() {
-            var text = $('#input_text').val();
+            var text = $('#input').val();
             user.push('MESSAGE', {'text': text});
             clearInputField();
         }
@@ -74,12 +74,7 @@
         <ul id="user_list_elem"></ul>
     </div>
     
-    <input id="input_text" type="text" value="test" />
-    <div id="input_buttons">
-        <div id="input_userlist" style="position: relative; width:33%; float: left">userlist</div>
-        <div id="input_file" style="position: relative; width:33%; float: left">file</div>
-        <div id="input_settings" style="position: relative; width:33%; float: left">settings</div>
-    </div>
+    <input id="input" type="text" value="test" />
 
 
 
