@@ -1,67 +1,95 @@
 html, body {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
 body {
-	background-color: #ffffeb;
-	font-family: Helvetica;
-	font-size: 16px;
+    color: #F1F2F3;
+    background-color: #22282A;
+    font-family: Helvetica;
+    
 }
 
 
 #top_bar {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 24px;
-	width: 100%;
-	background-color: #7f7f4f;
-	font-size: 18px;
-	color: #ffffeb;
-	vertical-align: middle;
-
-	padding-left: 2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    
+    font-size: 18px;
+    border-bottom: 1px solid #F1F2F3;
+    padding: 0 5px;
+    
 }
 
 #top_bar_roomname {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 
+/*#content {
+    position: absolute;
+    padding-left: 4px;
+    padding-right: 4px;
+    width: 100%;
+    top: 20px;
+    background-color:red;
+}*/
+
 #log {
-	position: absolute;
-	top: 24px;
-	bottom: 24px;
+    font-size: 14px;
 
-	width: 80%;
-	overflow: auto;
+    position: absolute;
+    top: 30px;
+    bottom: 40px;
+    
+    width: 80%;
+    overflow: auto;
+    
+    padding: 10px 10px;
+}
 
-	padding-top: 2px;
-	padding-left: 2px;
+#log div {
+    padding: 5px 0;
+}
+#log div.message {
+    line-height: 16px;
 }
 
 #user_list {
-	position: absolute;
-	top: 20px;
-	bottom: 24px;
-
-	background-color: #7f7f4f;
-	color: #ccccbc;
-	width: 20%;
-	right: 0;
+    position: absolute;
+    top: 30px;
+    bottom: 40px;
+    width: 300px;
+    right: 0;
+    border-left: 2px solid #F1F2F3;
 }
 
-#input {
-	position: absolute;
-	bottom: 0;
-	height: 24px;
+#bottom_bar {
+    border-top: 1px solid #F1F2F3;
 
-	background-color: #ccccbc;
-	font-size: 14px;
-	width: 80%;
-	left: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 26px;
+    padding: 7px 5px;
+    
+}
+#bottom_bar span#username {
+    padding: 0 5px;
+}
+#input {
+    background-color: #d8d8d8;
+    font-size: 16px;
+    border: 0;
+}
+span.nickname {
+    font-weight: bold;
 }
