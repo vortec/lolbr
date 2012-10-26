@@ -11,6 +11,7 @@ module.exports = (function(){
         default:
             var settings = {
                 port: 8000,
+                max_file_size: 5 * 1024 * 1024,
                 connection: false,  // no persistance
                 store: new MemoryStore()
             };

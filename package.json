@@ -13,6 +13,7 @@
         "cookie": "0.0.4",
         "express": "3.0.0beta6",
         "mysql": "0.9.6",
+        "node-imagemagic": "0.1.8",
         "orm": "git://github.com/vortec/node-orm.git#master",
         "socket.io": "0.9.6",
         "validator": "0.4.10"
