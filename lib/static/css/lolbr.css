@@ -13,6 +13,12 @@ body {
     
 }
 
+pre {
+    position: relative;
+    width: 95%;
+    overflow: auto
+}
+
 
 #top_bar {
     position: absolute;
@@ -66,7 +72,7 @@ body {
     position: absolute;
     top: 30px;
     bottom: 40px;
-    width: 300px;
+    width: 20%;
     right: 0;
     border-left: 2px solid #F1F2F3;
 }
