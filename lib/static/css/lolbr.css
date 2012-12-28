@@ -85,9 +85,9 @@ pre {
     left: 0;
     width: 100%;
     height: 15px;
-    padding: 7px 5px;
-    
+    padding: 7px 5px;    
 }
+
 #bottom_bar span#username {
     padding: 0 5px;
     vertical-align: top;
@@ -101,6 +101,13 @@ pre {
     height: 15px;
     resize: none;
 }
+
 span.nickname {
     font-weight: bold;
+}
+
+
+/* HANDLERS */
+.MESSAGE_OWN {
+    color: #ead075;
 }
