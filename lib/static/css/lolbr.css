@@ -108,6 +108,14 @@ span.nickname {
 
 
 /* HANDLERS */
+.MESSAGE a {
+    color: inherit;
+}
+
 .MESSAGE_OWN {
     color: #ead075;
+}
+
+.MESSAGE_OWN a {
+    color: inherit;
 }
