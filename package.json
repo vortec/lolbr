@@ -12,7 +12,7 @@
         "connect-mysql": "0.2.5",
         "cookie": "0.0.4",
         "express": "3.0.0beta6",
-        "mysql": "0.9.6",
+        "mysql": "2.17.1",
         "node-imagemagick": "0.1.8",
         "orm": "git://github.com/vortec/node-orm.git#master",
         "socket.io": "0.9.6",
