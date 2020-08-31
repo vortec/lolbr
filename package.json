@@ -16,7 +16,7 @@
         "node-imagemagick": "0.1.8",
         "orm": "git://github.com/vortec/node-orm.git#master",
         "socket.io": "0.9.6",
-        "validator": "0.4.10"
+        "validator": "13.1.1"
     },
     "repository": {
         "type": "git",
